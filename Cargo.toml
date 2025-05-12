@@ -1,0 +1,21 @@
+[package]
+name = "ctrf-rs"
+version = "0.1.0"
+authors = ["Richard Hulsman <dickdeutsch@hotmail.com>"]
+edition = "2018"
+description = "A reporter for Common Test Report Format (CTRF) in Rust"
+
+# crates.io fields
+license = "MIT"
+readme = "README.md"
+repository = "https://github.com/dickdeutsch/ctrf-rs"
+keywords = ["test", "report", "JSON"]
+categories = ["development-tools::testing", "data-structures", "value-formatting"]
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+semver = { version = "1.0.26", features = ["serde"] }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+uuid = { version = "1.15.1", features = ["serde", "v4"] }
