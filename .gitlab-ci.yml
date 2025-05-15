@@ -1,5 +1,5 @@
 stages:
-  - check
+  - main
 
 main-stage:
   stage: main
