@@ -1,0 +1,9 @@
+stages:
+  - check
+
+main-stage:
+  stage: main
+  script:
+    - cargo clippy --all-features -- -D warnings
+    - cargo fmt --all -- --check
+    - cargo test
