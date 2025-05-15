@@ -1,9 +1,6 @@
-stages:
-  - main
-
-main-stage:
-  stage: main
-  script:
-    - cargo clippy --all-features -- -D warnings
-    - cargo fmt --all -- --check
-    - cargo test
+include:
+  - component: $CI_SERVER_FQDN/rust-ci/rust-ci/extended@1.4.0
+    inputs:
+      target: "lib"
+      clippy-args: "--all-features -- -D warnings"
+      clippy-beta-args: "--all-features -- -D warnings"
