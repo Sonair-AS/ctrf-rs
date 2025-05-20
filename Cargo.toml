@@ -4,6 +4,7 @@ version = "0.1.0"
 authors = ["Richard Hulsman <dickdeutsch@hotmail.com>"]
 edition = "2018"
 description = "A reporter for Common Test Report Format (CTRF) in Rust"
+rust-version = "1.78"
 
 # crates.io fields
 license = "MIT"
