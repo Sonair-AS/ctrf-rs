@@ -27,6 +27,12 @@ pub struct Results {
     extra: HashMap<String, Value>,
 }
 
+impl Results {
+    pub fn all_passed(&self) -> bool {
+        self.summary.all_passed()
+    }
+}
+
 pub struct ResultsBuilder {
     tool: Tool,
     tests: Vec<Test>,

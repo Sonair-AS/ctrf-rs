@@ -44,6 +44,10 @@ impl Summary {
         }
     }
 
+    pub fn all_passed(&self) -> bool {
+        self.passed == self.tests
+    }
+
     /// Sets the count of passed tests and updates the overall total
     pub fn passed(&mut self, count: usize) {
         self.passed = count;
