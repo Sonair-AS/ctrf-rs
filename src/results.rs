@@ -129,7 +129,7 @@ mod tests {
     fn add_passed() -> Result<()> {
         const TEST_COUNT: usize = 2;
 
-        let tool = Tool::new(None);
+        let tool = Tool::new("ctrf-rs", None);
         let mut builder = ResultsBuilder::new(tool);
 
         for t in 0..TEST_COUNT {
@@ -160,7 +160,7 @@ mod tests {
     fn add_failed() -> Result<()> {
         const TEST_COUNT: usize = 4;
 
-        let tool = Tool::new(None);
+        let tool = Tool::new("ctrf-rs", None);
         let mut builder = ResultsBuilder::new(tool);
 
         for t in 0..TEST_COUNT {
@@ -191,7 +191,7 @@ mod tests {
     fn add_pending() -> Result<()> {
         const TEST_COUNT: usize = 6;
 
-        let tool = Tool::new(None);
+        let tool = Tool::new("ctrf-rs", None);
         let mut builder = ResultsBuilder::new(tool);
 
         for t in 0..TEST_COUNT {
@@ -222,7 +222,7 @@ mod tests {
     fn add_skipped() -> Result<()> {
         const TEST_COUNT: usize = 8;
 
-        let tool = Tool::new(None);
+        let tool = Tool::new("ctrf-rs", None);
         let mut builder = ResultsBuilder::new(tool);
 
         for t in 0..TEST_COUNT {
@@ -253,7 +253,7 @@ mod tests {
     fn add_other() -> Result<()> {
         const TEST_COUNT: usize = 10;
 
-        let tool = Tool::new(None);
+        let tool = Tool::new("ctrf-rs", None);
         let mut builder = ResultsBuilder::new(tool);
 
         for t in 0..TEST_COUNT {
@@ -286,7 +286,7 @@ mod tests {
         const ABSENT_SUITE: &str = "absent";
         const UNKNOWN_SUITE: &str = "unknown";
 
-        let tool = Tool::new(None);
+        let tool = Tool::new("ctrf-rs", None);
         let mut builder = ResultsBuilder::new(tool);
 
         const PASS_COUNT: usize = 10;

@@ -162,7 +162,7 @@ mod tests {
     #[test]
     fn create_empty_report() {
         let time = SystemTime::now();
-        let results = ResultsBuilder::new(Tool::new(None)).build(time, time);
+        let results = ResultsBuilder::new(Tool::new("ctrf-rs", None)).build(time, time);
         let report = Report::new(None, None, None, results);
 
         assert_eq!(report.report_format, REPORT_FORMAT);
@@ -175,7 +175,7 @@ mod tests {
     #[test]
     fn create_report_with_id() {
         let time = SystemTime::now();
-        let results = ResultsBuilder::new(Tool::new(None)).build(time, time);
+        let results = ResultsBuilder::new(Tool::new("ctrf-rs", None)).build(time, time);
         let id = Some(Uuid::new_v4());
         let report = Report::new(id, None, None, results);
 
@@ -189,7 +189,7 @@ mod tests {
     #[test]
     fn create_report_with_timestamp() {
         let time = SystemTime::now();
-        let results = ResultsBuilder::new(Tool::new(None)).build(time, time);
+        let results = ResultsBuilder::new(Tool::new("ctrf-rs", None)).build(time, time);
         let ts = Some(time);
         let report = Report::new(None, ts, None, results);
 
@@ -203,7 +203,7 @@ mod tests {
     #[test]
     fn create_report_with_generated_by() {
         let time = SystemTime::now();
-        let results = ResultsBuilder::new(Tool::new(None)).build(time, time);
+        let results = ResultsBuilder::new(Tool::new("ctrf-rs", None)).build(time, time);
         let gen_by = Some(String::from("ctrf-rs"));
         let report = Report::new(None, None, gen_by, results);
 
@@ -217,7 +217,7 @@ mod tests {
     #[test]
     fn serialize_to_string() {
         let time = SystemTime::now();
-        let results = ResultsBuilder::new(Tool::new(None)).build(time, time);
+        let results = ResultsBuilder::new(Tool::new("ctrf-rs", None)).build(time, time);
         let report = Report::new(None, None, None, results);
 
         assert_eq!(report.report_format, REPORT_FORMAT);
@@ -242,7 +242,7 @@ mod tests {
     #[test]
     fn serialize_to_string_pretty() {
         let time = SystemTime::now();
-        let results = ResultsBuilder::new(Tool::new(None)).build(time, time);
+        let results = ResultsBuilder::new(Tool::new("ctrf-rs", None)).build(time, time);
         let report = Report::new(None, None, None, results);
 
         assert_eq!(report.report_format, REPORT_FORMAT);
@@ -279,7 +279,7 @@ mod tests {
         assert_eq!(report.spec_version, SPEC_VERSION);
 
         let time_sys = SystemTime::UNIX_EPOCH + Duration::from_millis(time);
-        let results = ResultsBuilder::new(Tool::new(None)).build(time_sys, time_sys);
+        let results = ResultsBuilder::new(Tool::new("ctrf-rs", None)).build(time_sys, time_sys);
         let report_exp = Report::new(None, None, None, results);
 
         assert_eq!(report, report_exp);

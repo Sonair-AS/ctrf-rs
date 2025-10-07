@@ -18,9 +18,9 @@ pub struct Tool {
 }
 
 impl Tool {
-    pub fn new(version: Option<String>) -> Self {
+    pub fn new(name: &str, version: Option<String>) -> Self {
         Self {
-            name: String::from(TOOL_NAME),
+            name: String::from(name),
             version,
             extra: HashMap::new(),
         }
