@@ -115,6 +115,10 @@ impl Test {
     pub fn suite(&self) -> &Option<String> {
         &self.suite
     }
+
+    pub fn fail_test(&mut self) {
+        self.status = Status::Failed;
+    }
 }
 
 impl_extra!(Test);
